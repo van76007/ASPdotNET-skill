@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://dmr.vestjylland.dk/services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://dmr.vestjylland.dk/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://dmr.vestjylland.dk/services/Imports">
+      <xsd:import schemaLocation="http://195.225.90.66:8881/DmrWebServices_v1.0.0.3/DmrService.svc?xsd=xsd0" namespace="http://dmr.vestjylland.dk/services" />
+      <xsd:import schemaLocation="http://195.225.90.66:8881/DmrWebServices_v1.0.0.3/DmrService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://195.225.90.66:8881/DmrWebServices_v1.0.0.3/DmrService.svc?xsd=xsd2" namespace="http://dmr.vestjylland.dk/schemas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDmrService_GetVehicleInformationByReg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleInformationByReg" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetVehicleInformationByReg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleInformationByRegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetVehicleInformationByStel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleInformationByStel" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetVehicleInformationByStel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleInformationByStelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetVehicleInformationByReg_NoReg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleInformationByReg_NoReg" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetVehicleInformationByReg_NoReg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleInformationByReg_NoRegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetVehicleInformationByStel_NoReg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleInformationByStel_NoReg" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetVehicleInformationByStel_NoReg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleInformationByStel_NoRegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetKoeretoejModelVariantRegisterRecord_AutoIT_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKoeretoejModelVariantRegisterRecord_AutoIT" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetKoeretoejModelVariantRegisterRecord_AutoIT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKoeretoejModelVariantRegisterRecord_AutoITResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetKIdModelVariantIdRecord_AutoIT_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKIdModelVariantIdRecord_AutoIT" />
+  </wsdl:message>
+  <wsdl:message name="IDmrService_GetKIdModelVariantIdRecord_AutoIT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKIdModelVariantIdRecord_AutoITResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDmrService">
+    <wsdl:operation name="GetVehicleInformationByReg">
+      <wsdl:input wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByReg" message="tns:IDmrService_GetVehicleInformationByReg_InputMessage" />
+      <wsdl:output wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByRegResponse" message="tns:IDmrService_GetVehicleInformationByReg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleInformationByStel">
+      <wsdl:input wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByStel" message="tns:IDmrService_GetVehicleInformationByStel_InputMessage" />
+      <wsdl:output wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByStelResponse" message="tns:IDmrService_GetVehicleInformationByStel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleInformationByReg_NoReg">
+      <wsdl:input wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByReg_NoReg" message="tns:IDmrService_GetVehicleInformationByReg_NoReg_InputMessage" />
+      <wsdl:output wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByReg_NoRegResponse" message="tns:IDmrService_GetVehicleInformationByReg_NoReg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleInformationByStel_NoReg">
+      <wsdl:input wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByStel_NoReg" message="tns:IDmrService_GetVehicleInformationByStel_NoReg_InputMessage" />
+      <wsdl:output wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByStel_NoRegResponse" message="tns:IDmrService_GetVehicleInformationByStel_NoReg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKoeretoejModelVariantRegisterRecord_AutoIT">
+      <wsdl:input wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetKoeretoejModelVariantRegisterRecord_AutoIT" message="tns:IDmrService_GetKoeretoejModelVariantRegisterRecord_AutoIT_InputMessage" />
+      <wsdl:output wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetKoeretoejModelVariantRegisterRecord_AutoITResponse" message="tns:IDmrService_GetKoeretoejModelVariantRegisterRecord_AutoIT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKIdModelVariantIdRecord_AutoIT">
+      <wsdl:input wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetKIdModelVariantIdRecord_AutoIT" message="tns:IDmrService_GetKIdModelVariantIdRecord_AutoIT_InputMessage" />
+      <wsdl:output wsaw:Action="http://dmr.vestjylland.dk/services/IDmrService/GetKIdModelVariantIdRecord_AutoITResponse" message="tns:IDmrService_GetKIdModelVariantIdRecord_AutoIT_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDmrService" type="tns:IDmrService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVehicleInformationByReg">
+      <soap:operation soapAction="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByReg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleInformationByStel">
+      <soap:operation soapAction="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByStel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleInformationByReg_NoReg">
+      <soap:operation soapAction="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByReg_NoReg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleInformationByStel_NoReg">
+      <soap:operation soapAction="http://dmr.vestjylland.dk/services/IDmrService/GetVehicleInformationByStel_NoReg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKoeretoejModelVariantRegisterRecord_AutoIT">
+      <soap:operation soapAction="http://dmr.vestjylland.dk/services/IDmrService/GetKoeretoejModelVariantRegisterRecord_AutoIT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKIdModelVariantIdRecord_AutoIT">
+      <soap:operation soapAction="http://dmr.vestjylland.dk/services/IDmrService/GetKIdModelVariantIdRecord_AutoIT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

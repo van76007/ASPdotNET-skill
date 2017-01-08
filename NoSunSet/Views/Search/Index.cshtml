@@ -1,0 +1,44 @@
+﻿@model NoSunSet.Models.SearchResultModel
+@{
+    ViewBag.Title = "Car Search";
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<h2><strong>Search car</strong></h2>
+
+@using (Ajax.BeginForm("Find", "Search", FormMethod.Post,
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST",
+            UpdateTargetId = "search-results"
+         }))
+{
+<div>
+    <p>
+        <label>Registration number</label> @Html.TextBox("registrationNumber", ViewBag.FilterValue as string, new{Title="Registration must be entered without spaces , for example YY32551"})
+        <input type="submit" value="Find" />
+    </p>
+</div>      
+}
+
+<div id="search-results">
+    @if (Model != null)
+    {
+        Html.RenderPartial("_SearchResultsPartial", Model.SearchResults);
+    }
+</div>

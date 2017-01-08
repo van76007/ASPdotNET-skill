@@ -1,0 +1,21 @@
+﻿@model IEnumerable<NoSunSet.Models.Car>
+
+<p class="message-success">Result</p>
+<br />
+<div class="search-result">
+
+    <table class="TFtable">
+        @foreach (var car in Model)
+	    {
+		    <tr>
+                <td>
+                    <div class="search-result-line">
+			            <div class="listing-item-left name">@Html.DisplayFor(model => car.Manufacturer)</div>
+                        <div class="listing-item">@Html.DisplayFor(model => car.LineInformation)</div>
+		            </div>
+                 </td>
+		    </tr>
+            
+	    }
+    </table>
+</div>

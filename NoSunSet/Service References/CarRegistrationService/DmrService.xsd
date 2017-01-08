@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://dmr.vestjylland.dk/schemas" elementFormDefault="qualified" targetNamespace="http://dmr.vestjylland.dk/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://195.225.90.66:8881/DmrWebServices_v1.0.0.3/DmrService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="VehicleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnvendelseNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnvendelseNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EgenVaegt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EjerBrugere" nillable="true" type="tns:ArrayOfEjerBruger" />
+      <xs:element minOccurs="0" name="FoersteRegistreringDato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Karrosseri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KarrosseriNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KoeretoejIdent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maerke" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaerkeNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MoreVehicles" nillable="true" type="tns:ArrayOfVehicleInformation" />
+      <xs:element minOccurs="0" name="MotorEffekt" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MotorEffektHK" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RegistreringsNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StelNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalVaegt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeGodkendelseNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Variant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariantNummer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformation" nillable="true" type="tns:VehicleInformation" />
+  <xs:complexType name="ArrayOfEjerBruger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EjerBruger" nillable="true" type="tns:EjerBruger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEjerBruger" nillable="true" type="tns:ArrayOfEjerBruger" />
+  <xs:complexType name="EjerBruger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CVR_CPR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EjerBrugerForhold" type="tns:EjerBrugerForholdType" />
+      <xs:element minOccurs="0" name="EjerBrugerType" type="tns:EjerBrugerEnhedsType" />
+      <xs:element minOccurs="0" name="HusBogstav" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HusNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostDistrikt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Primaer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProduktionEnhedNummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SENummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VejNavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EjerBruger" nillable="true" type="tns:EjerBruger" />
+  <xs:simpleType name="EjerBrugerForholdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ejer" />
+      <xs:enumeration value="Bruger" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EjerBrugerForholdType" nillable="true" type="tns:EjerBrugerForholdType" />
+  <xs:simpleType name="EjerBrugerEnhedsType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ukendt" />
+      <xs:enumeration value="Person" />
+      <xs:enumeration value="Virksomhed" />
+      <xs:enumeration value="UdenlandskPerson" />
+      <xs:enumeration value="UdenlandskVirksomhed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EjerBrugerEnhedsType" nillable="true" type="tns:EjerBrugerEnhedsType" />
+  <xs:complexType name="ArrayOfVehicleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformation" nillable="true" type="tns:VehicleInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleInformation" nillable="true" type="tns:ArrayOfVehicleInformation" />
+  <xs:complexType name="ArrayOfKoeretoejModelVariantRegisterRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KoeretoejModelVariantRegisterRecord" nillable="true" type="tns:KoeretoejModelVariantRegisterRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKoeretoejModelVariantRegisterRecord" nillable="true" type="tns:ArrayOfKoeretoejModelVariantRegisterRecord" />
+  <xs:complexType name="KoeretoejModelVariantRegisterRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModelVariantId" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeId" type="xs:short" />
+      <xs:element minOccurs="0" name="TypeNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FabrikatId" type="xs:int" />
+      <xs:element minOccurs="0" name="FabrikatNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelserieNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KarosseritypeId" type="xs:short" />
+      <xs:element minOccurs="0" name="KarosseritypeNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoereAntal" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="KarosserilaengdetypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DrivhjultypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modelseriegenerationsnummer" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Modelseriefaceliftnummer" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="AkselafstandMM" type="xs:short" />
+      <xs:element minOccurs="0" name="SporviddeForMM_nedre" type="xs:short" />
+      <xs:element minOccurs="0" name="SporviddeForMM_oevre" type="xs:short" />
+      <xs:element minOccurs="0" name="SporviddeBagMM_nedre" type="xs:short" />
+      <xs:element minOccurs="0" name="SporviddeBagMM_oevre" type="xs:short" />
+      <xs:element minOccurs="0" name="SiddepladserAntal" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="AirbagsAntal" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="SikkerhedsstjernerAntal" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="LaengdeMM_nedre" type="xs:int" />
+      <xs:element minOccurs="0" name="LaengdeMM_oevre" type="xs:int" />
+      <xs:element minOccurs="0" name="BreddeMM_nedre" type="xs:int" />
+      <xs:element minOccurs="0" name="BreddeMM_oevre" type="xs:int" />
+      <xs:element minOccurs="0" name="HoejdeMM_nedre" type="xs:int" />
+      <xs:element minOccurs="0" name="HoejdeMM_oevre" type="xs:int" />
+      <xs:element minOccurs="0" name="DrivmiddeltypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DrivmiddeltypeNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CylindreAntal" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="SlagvolumenCCM" type="xs:int" />
+      <xs:element minOccurs="0" name="MotorstoerrelseLiterBetegnelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaksimalEffektHKBetegnelse" type="xs:int" />
+      <xs:element minOccurs="0" name="MaksimalEffektKW" type="xs:int" />
+      <xs:element minOccurs="0" name="MaksimalEffektVedOMDRprMin" type="xs:int" />
+      <xs:element minOccurs="0" name="MaksimaltDrejningsmomentNM" type="xs:int" />
+      <xs:element minOccurs="0" name="MaksimalDrejningsmomentVedOMDRprMin" type="xs:int" />
+      <xs:element minOccurs="0" name="EUmiljoenormnummer" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MotormaerkningskoderCSV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransmissiontypeId" type="xs:short" />
+      <xs:element minOccurs="0" name="TransmissiontypeNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearAntal" type="xs:short" />
+      <xs:element minOccurs="0" name="ModelId" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Variantbetegnelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelTillaegsbetegnelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Udstyrsniveaubetegnelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KarosseriTillaegsbetegnelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotorTillaegsbetegnelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransmissionTillaegsbetegnelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplerendeVariantbetegnelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EgenvaegtKG_nedre" type="xs:int" />
+      <xs:element minOccurs="0" name="EgenvaegtKG_oevre" type="xs:int" />
+      <xs:element minOccurs="0" name="KoereklarvaegtKG_nedre" type="xs:int" />
+      <xs:element minOccurs="0" name="KoereklarvaegtKG_oevre" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalvaegtKG_nedre" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalvaegtKG_oevre" type="xs:int" />
+      <xs:element minOccurs="0" name="ESP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ABS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DPF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DrivmiddelforbrugKMprL" type="xs:float" />
+      <xs:element minOccurs="0" name="ELforbrugWhprKM" type="xs:int" />
+      <xs:element minOccurs="0" name="CO2udledningGRAMprKM" type="xs:float" />
+      <xs:element minOccurs="0" name="TophastighedKMprTIME" type="xs:short" />
+      <xs:element minOccurs="0" name="Accelerationsevne0til100kmtS" type="xs:float" />
+      <xs:element minOccurs="0" name="EFtypegodkendelsesnummerCSV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DKtypegodkendelsesnummerCSV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRMmaerkekodeCSV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DMRmaerkemodelvarianttypeIdCSV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DMRmodelgruppeIdCSV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AargangNysalg" type="xs:short" />
+      <xs:element minOccurs="0" name="StandardprisId" type="xs:int" />
+      <xs:element minOccurs="0" name="NyprisKR" type="xs:int" />
+      <xs:element minOccurs="0" name="NyprisErEstimeret" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NyprisErPlusMoms" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NyprisMomsbeloebKR" type="xs:int" />
+      <xs:element minOccurs="0" name="DatoOprettet" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatoSenestRettet" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatoDeaktiveret" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KoeretoejModelVariantRegisterRecord" nillable="true" type="tns:KoeretoejModelVariantRegisterRecord" />
+  <xs:complexType name="ArrayOfKIdModelVariantIdRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KIdModelVariantIdRecord" nillable="true" type="tns:KIdModelVariantIdRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKIdModelVariantIdRecord" nillable="true" type="tns:ArrayOfKIdModelVariantIdRecord" />
+  <xs:complexType name="KIdModelVariantIdRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatoDeaktiveret" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatoOprettet" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DMRkoeretoejIdent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelVariantId" type="xs:long" />
+      <xs:element minOccurs="0" name="Q" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KIdModelVariantIdRecord" nillable="true" type="tns:KIdModelVariantIdRecord" />
+</xs:schema>

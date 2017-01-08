@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://dmr.vestjylland.dk/services" elementFormDefault="qualified" targetNamespace="http://dmr.vestjylland.dk/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://195.225.90.66:8881/DmrWebServices_v1.0.0.3/DmrService.svc?xsd=xsd2" namespace="http://dmr.vestjylland.dk/schemas" />
+  <xs:element name="GetVehicleInformationByReg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="registreringsNummer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleInformationByRegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://dmr.vestjylland.dk/schemas" minOccurs="0" name="GetVehicleInformationByRegResult" nillable="true" type="q1:VehicleInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleInformationByStel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stelNummer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleInformationByStelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://dmr.vestjylland.dk/schemas" minOccurs="0" name="GetVehicleInformationByStelResult" nillable="true" type="q2:VehicleInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleInformationByReg_NoReg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="registreringsNummer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleInformationByReg_NoRegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://dmr.vestjylland.dk/schemas" minOccurs="0" name="GetVehicleInformationByReg_NoRegResult" nillable="true" type="q3:VehicleInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleInformationByStel_NoReg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stelNummer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleInformationByStel_NoRegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://dmr.vestjylland.dk/schemas" minOccurs="0" name="GetVehicleInformationByStel_NoRegResult" nillable="true" type="q4:VehicleInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKoeretoejModelVariantRegisterRecord_AutoIT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="datoSenestRettet" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKoeretoejModelVariantRegisterRecord_AutoITResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://dmr.vestjylland.dk/schemas" minOccurs="0" name="GetKoeretoejModelVariantRegisterRecord_AutoITResult" nillable="true" type="q5:ArrayOfKoeretoejModelVariantRegisterRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKIdModelVariantIdRecord_AutoIT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="datoSenestRettet" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKIdModelVariantIdRecord_AutoITResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://dmr.vestjylland.dk/schemas" minOccurs="0" name="GetKIdModelVariantIdRecord_AutoITResult" nillable="true" type="q6:ArrayOfKIdModelVariantIdRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
