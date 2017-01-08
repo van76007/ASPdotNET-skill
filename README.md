@@ -4,7 +4,8 @@ An assignment to test ASP.NET skill
 
 ## Installation
 
-Prerequisitions: 
+Prerequisitions:
+
 1. Microsoft Visual Studio 2015
 2. (Optional) Microsoft SQL Server 2012
 
